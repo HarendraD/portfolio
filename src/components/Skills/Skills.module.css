@@ -1,0 +1,91 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-12);
+}
+
+.categoryWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.categoryTitle {
+  font-size: 1.2rem;
+  font-family: var(--font-mono);
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: var(--space-8);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.categoryTitle::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0, 245, 255, 0.2), transparent);
+}
+
+.badgeCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.skillBadge {
+  position: relative;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: default;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skillBadge:hover {
+  background: rgba(0, 245, 255, 0.05);
+  border-color: rgba(0, 245, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 245, 255, 0.15);
+}
+
+.badgeContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skillName {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+}
+
+@media (max-width: 480px) {
+  .badgeCloud {
+    gap: var(--space-2);
+  }
+  
+  .skillBadge {
+    padding: 10px 14px;
+  }
+  
+  .skillName {
+    font-size: 0.9rem;
+  }
+}

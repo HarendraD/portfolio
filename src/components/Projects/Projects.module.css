@@ -1,0 +1,120 @@
+.swiperWrapper {
+  padding: var(--space-8) 0;
+  margin: 0 -5vw;
+}
+
+.mySwiper {
+  padding: 50px 0 80px !important;
+}
+
+.slide {
+  width: min(90vw, 450px) !important;
+}
+
+.projectCard {
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-8) !important;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.year {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--amber);
+  opacity: 0.8;
+}
+
+.category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 700;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: var(--space-4);
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-8);
+  flex-grow: 1;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-8);
+}
+
+.techTag {
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: var(--cyan);
+  font-family: var(--font-mono);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-8);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statLabel {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.statVal {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--cyan);
+}
+
+.footer {
+  margin-top: auto;
+}
+
+/* Swiper Nav/Pagination Styling */
+:global(.swiper-button-next),
+:global(.swiper-button-prev) {
+  color: var(--cyan) !important;
+  transform: scale(0.6);
+}
+
+:global(.swiper-pagination-bullet) {
+  background: rgba(255, 255, 255, 0.2) !important;
+  opacity: 1 !important;
+}
+
+:global(.swiper-pagination-bullet-active) {
+  background: var(--cyan) !important;
+  box-shadow: 0 0 10px var(--cyan-glow);
+}

@@ -1,0 +1,156 @@
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-8) 0;
+}
+
+.timelineLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, rgba(0, 245, 255, 0.2), rgba(0, 245, 255, 0.2), transparent);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: var(--space-12);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.timelinePoint {
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  width: 16px;
+  height: 16px;
+  background: var(--navy);
+  border: 2px solid var(--cyan);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.pulse {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px solid var(--cyan-glow);
+  animation: pulse-glow 2s infinite;
+}
+
+.expCard {
+  width: calc(50% - 50px);
+  margin-left: auto;
+}
+
+.timelineItem:nth-child(even) .expCard {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-4);
+  gap: var(--space-4);
+}
+
+.roleInfo h3 {
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.company {
+  font-size: 0.9rem;
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+.dot {
+  margin: 0 4px;
+  opacity: 0.5;
+}
+
+.period {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.period span {
+  display: block;
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.type {
+  font-size: 0.7rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--amber) !important;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: var(--space-4);
+}
+
+.highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.highlights li {
+  position: relative;
+  padding-left: var(--space-6);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.highlights li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+  font-family: var(--font-mono);
+}
+
+@media (max-width: 900px) {
+  .timelineLine {
+    left: 20px;
+    transform: none;
+  }
+  
+  .timelinePoint {
+    left: 20px;
+    transform: translateX(-50%);
+  }
+  
+  .expCard {
+    width: calc(100% - 60px);
+    margin-left: 60px !important;
+  }
+  
+  .header {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  .period {
+    text-align: left;
+  }
+}

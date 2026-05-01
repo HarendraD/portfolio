@@ -1,0 +1,198 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 100px;
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 16px;
+  background: var(--cyan-dim);
+  border: 1px solid var(--cyan-border);
+  color: var(--cyan);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: var(--space-6);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  background: var(--cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--cyan);
+  animation: blink 1.5s infinite;
+}
+
+.title {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: var(--space-6);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 580px;
+  margin-bottom: var(--space-12);
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glassCircle {
+  width: 280px;
+  height: 280px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.4), inset 0 0 40px rgba(255, 255, 255, 0.05);
+  position: relative;
+  z-index: 2;
+  animation: float 6s ease-in-out infinite;
+}
+
+.innerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.swiftIcon {
+  font-size: 4rem;
+  color: var(--cyan);
+  filter: drop-shadow(0 0 15px var(--cyan-glow));
+}
+
+.swiftLabel {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.1em;
+}
+
+.orbitCircle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 245, 255, 0.2);
+  z-index: 1;
+}
+
+.orbit1 {
+  width: 400px;
+  height: 400px;
+  animation: rotate-slow 20s linear infinite;
+}
+
+.orbit2 {
+  width: 520px;
+  height: 520px;
+  animation: rotate-slow 35s linear reverse infinite;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.mouse {
+  width: 26px;
+  height: 42px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  position: relative;
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background: var(--cyan);
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px var(--cyan);
+}
+
+@media (max-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--space-16);
+  }
+  
+  .description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .actions {
+    justify-content: center;
+  }
+  
+  .visual {
+    margin-top: var(--space-12);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+  
+  .glassCircle {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .orbit1 { width: 300px; height: 300px; }
+  .orbit2 { width: 400px; height: 400px; }
+}
