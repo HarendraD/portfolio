@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
 import { motion } from 'framer-motion';
 import { CountUp } from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import { GlassCard, SectionTitle } from '../ui';
 import { education } from '../../data/portfolioData';
+import profileImg from '../../assets/profile.png';
 import styles from './About.module.css';
 
 // Replaces the unstable react-countup library with a robust custom hook
@@ -105,7 +107,7 @@ export default function About() {
           <div className={styles.imageContainer} data-aos="fade-right">
             <GlassCard className={styles.profileCard}>
               <div className={styles.imageWrapper}>
-                <img src="/src/assets/profile.png" alt="Senior iOS Engineer" className={styles.profileImage} />
+                <img src={profileImg} alt="Senior iOS Engineer" className={styles.profileImage} />
                 <div className={styles.imageOverlay}></div>
               </div>
             </GlassCard>

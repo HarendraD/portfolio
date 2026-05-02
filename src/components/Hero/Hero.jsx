@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-scroll';
 import Particles from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
+import heroImg from '../../assets/hero.jpg';
 import styles from './Hero.module.css';
 
 const NameTypewriter = ({ text }) => {
@@ -118,11 +119,24 @@ export default function Hero() {
       />
       
       <div className="container">
+        <motion.div 
+          className={styles.visual}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
+          <div className={styles.imageWrapper}>
+            <img src={heroImg} alt="Harendra Dilshan" className={styles.heroImage} />
+            <div className={styles.imageOverlay}></div>
+          </div>
+        </motion.div>
+
         <div className={styles.content}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
+            style={{ position: 'relative', zIndex: 2 }}
           >
             <h1 className={styles.title}>
               Hi, I'm <br />
@@ -155,34 +169,9 @@ export default function Hero() {
               </Link>
             </div>
           </motion.div>
-          
-          <motion.div 
-            className={styles.visual}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-          >
-            <div className={styles.glassCircle}>
-              <div className={styles.innerContent}>
-                <span className={styles.swiftIcon}>⌘</span>
-                <span className={styles.swiftLabel}>Swift</span>
-              </div>
-            </div>
-            <div className={`${styles.orbitCircle} ${styles.orbit1}`}></div>
-            <div className={`${styles.orbitCircle} ${styles.orbit2}`}></div>
-          </motion.div>
         </div>
       </div>
       
-      <div className={styles.scrollIndicator}>
-        <motion.div 
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className={styles.mouse}
-        >
-          <div className={styles.wheel}></div>
-        </motion.div>
-      </div>
     </section>
   );
 }
